@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hamari Awaz - Home</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;     
+            
+            background-image: url("{{ url_for('static', filename='leninn.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            
+            color: #333;
+            background-color: rgba(255, 182, 193, 0.45);
+            
+        }
+        
+
+        nav {
+            background: rgba(128, 0, 128, 0.984);
+            padding: 15px;
+            text-align: right;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            border-radius: 5px;
+        }
+
+        nav a {
+            margin: 15px;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .main-content {
+            margin-top: 80px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .magazine-section {
+            margin-top: 50px;
+        }
+
+        .magazine {
+            display: inline-block;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .magazine img {
+            width: 200px;
+            height: 280px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        .magazine-title {
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 18px;
+            color: purple;
+        }
+
+        .suggestion-box {
+            /* background: rgba(142, 27, 142, 0.274); */
+            background-color: rgba(255, 255, 255, 0.511);
+            color: rgb(255, 255, 255);
+            padding: 20px;
+            margin-top: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .suggestion-form {
+            width: 60%;
+        }
+
+        .suggestion-form input,
+        .suggestion-form textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .suggestion-form button {
+            background: white;
+            color: rgba(128, 0, 128, 0.507);
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-info {
+            font-size: 14px;
+            line-height: 1.6;
+            text-align: left;
+        }
+        .logo{
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            /* position: fixed; */
+            top: 0;
+            left: 0;
+            padding-left: 50px;
+            padding-top: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="{{url_for('home')}}">Home</a>
+        <a href="{{url_for('membership')}}">Membership</a>
+        <a href="{{ url_for('order') }}">Order</a>
+        
+    </nav>
+    
+
+    <div class="main-content">
+        <div >
+        <img class="logo"  src="{{ url_for('static', filename='logo.png') }}">
+    </div>
+        <h1>Welcome to Hamari Awaz</h1>
+        <h3>Explore and enjoy our collection of digital magazines!
+            <br>
+            You can also order for hard copies
+        </h3>
+
+        <div class="magazine-section">
+            
+            <div class="magazine">
+                <div class="magazine-title">04 May Webinar</div>
+                <a href="{{url_for('static',filename='pdf1.jpeg')}}" target="_blank">
+                    
+                    <img src="{{ url_for('static', filename='img1.jpeg') }}" alt="Image">
+
+                </a>
+            </div>
+            <div class="magazine">
+                <div class="magazine-title">February-April 2025</div>
+                <a href="{{url_for('static',filename='pdf2.pdf')}}" target="_blank">
+                    
+                    <img src="{{ url_for('static', filename='img2.jpg') }}" alt="Image">
+
+                </a>
+            </div>
+            <div class="magazine">
+                <div class="magazine-title">October-December 2024</div>
+                
+                <a href="{{url_for('static',filename='pdf3.pdf')}}" target="_blank">
+                    
+                    <img src="{{ url_for('static', filename='img3.jpg') }}" alt="Image">
+
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="suggestion-box">
+        <form class="suggestion-form" action="/" method="POST" id="form3">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <textarea name="message" placeholder="Your Message..." required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="contact-info">
+            <p><a href="mailto:hamariawaz@example.com">Email: hamariawaz@example.com</a></p>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
